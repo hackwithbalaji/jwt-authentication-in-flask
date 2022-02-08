@@ -1,7 +1,11 @@
+import jwt
+
+from datetime import datetime, timedelta
 from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
+SECRET = "anhhgrgbvjsafgj124rsfkbg"
 users = [
     {
         'uname' : 'balaji',
@@ -15,6 +19,12 @@ def verify_user(data):
             return True
     return False
 
+def create_jwt_token(data):
+    return jwt.encode({
+        'user_name' : data['uname'],
+        'exp' : datetime.utcnow() + timedelta(minutes=15)
+    }, SECRET)
+
 @app.route("/")
 def home():
     return "Home page"
@@ -26,7 +36,13 @@ def login():
     """
     user_credentials = request.get_json()
     if verify_user(user_credentials):
-        return jsonify({'message' : 'Login Success'})
+
+        return jsonify(
+            {
+                'message' : 'Login Success',
+                'token' : create_jwt_token(user_credentials)
+            }
+        )
     
     return jsonify({'message' : 'Login Failed'})
 
