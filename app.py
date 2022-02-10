@@ -2,16 +2,16 @@ import jwt
 
 from datetime import datetime, timedelta
 from flask import Flask, jsonify, request
+from flask_restful import Api
+
+from routes import Routes
+from user import users
 
 app = Flask(__name__)
+api = Api(app)
+Routes(api)
 
 SECRET = "anhhgrgbvjsafgj124rsfkbg"
-users = [
-    {
-        'uname' : 'balaji',
-        'password' : 123
-    }
-]
 
 def verify_user(data):
     for user in users:
@@ -45,8 +45,6 @@ def login():
         )
     
     return jsonify({'message' : 'Login Failed'})
-
-    
 
 
 app.run(port = 5000)
