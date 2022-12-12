@@ -1,0 +1,71 @@
+{
+	"variables": [],
+	"info": {
+		"name": "jwt_authentication_flask",
+		"_postman_id": "a077e09f-6fcd-da5e-1a78-102cc445e07f",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"url": "http://localhost:5000/api/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\" : \"\",\r\n\t\"password\" : \"\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Signup",
+			"request": {
+				"url": "http://localhost:5000/api/signup",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"name\" : \"\",\r\n\t\"password\" : \"\"\r\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh token",
+			"request": {
+				"url": "http://localhost:5000/api/refresh-token",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"jwt_token\": \"\",\n    \"refresh_token\": \"\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
