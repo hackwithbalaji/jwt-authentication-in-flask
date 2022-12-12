@@ -7,7 +7,6 @@ Implementation of jwt authentication using flask
 
 #Steps to run without docker
 1. py -m venv .venv
-2. activate your virtual environment 
-    .\.venv\Scripts\activate
+2. activate your virtual environment (venv\Scripts\activate)
 3. pip install -r requirements.txt
 4. flask run 
