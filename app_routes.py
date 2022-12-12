@@ -1,4 +1,5 @@
-from user import User, Login, Signup, RefreshToken
+from app_user import User
+from app_auth import Login, Signup, RefreshToken
 
 class Routes():
     def __init__(self, api):

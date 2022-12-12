@@ -1,4 +1,4 @@
-from db import db
+from app_db import db
 
 class UserEntity(db.Model):
     __tablename__ = "User"

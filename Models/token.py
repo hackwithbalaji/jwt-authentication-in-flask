@@ -1,4 +1,4 @@
-from db import db
+from app_db import db
 
 class TokenEntity(db.Model):
     __tablename__ = "Token"

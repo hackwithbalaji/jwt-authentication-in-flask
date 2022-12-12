@@ -1,9 +1,8 @@
-from flask import Flask, jsonify, request
+from flask import Flask
 from flask_restful import Api
 
-from routes import Routes
-from user import users
-from db import db
+from app_routes import Routes
+from app_db import db
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///data.db"
